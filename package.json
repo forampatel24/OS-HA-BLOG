@@ -1,0 +1,13 @@
+{
+  "name": "foram-os-journal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local, personal blog for writing and publishing notes about operating systems.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

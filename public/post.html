@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A post from Foram's OS Journal.">
+  <title>Post &middot; Foram's OS Journal</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    try {
+      const saved = localStorage.getItem('os-journal-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+      else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body class="page-post">
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"><span></span></div>
+
+  <header class="post-header">
+    <div class="post-header-inner">
+      <a class="brand brand-compact" href="/" aria-label="Foram's OS Journal home">
+        <span class="brand-mark">F</span>
+        <span class="brand-name">Foram<span class="dot">.</span></span>
+      </a>
+
+      <div class="post-header-actions">
+        <a class="back-link" href="/">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M11 18l-6-6 6-6"></path>
+          </svg>
+          <span>Journal</span>
+        </a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle theme">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"></path>
+          </svg>
+        </button>
+        <a class="btn btn-quiet btn-small" id="editBtn" href="/" hidden>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+          Edit
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="post-main">
+    <div class="preview-banner" id="previewBanner" hidden>
+      <span class="preview-dot"></span>
+      <span id="previewText">This is a draft preview.</span>
+      <a href="/" id="previewEditLink">Back to editor</a>
+    </div>
+
+    <article class="post-article" id="postArticle" hidden>
+      <header class="post-hero">
+        <div class="post-tags" id="postTags"></div>
+        <h1 id="postTitle"></h1>
+        <p class="post-subtitle" id="postSubtitle" hidden></p>
+        <div class="post-byline">
+          <span class="author-avatar" aria-hidden="true">F</span>
+          <div class="byline-text">
+            <span class="byline-name">Foram</span>
+            <span class="byline-meta" id="postMeta"></span>
+          </div>
+        </div>
+      </header>
+
+      <figure class="post-cover" id="coverFigure" hidden>
+        <img id="postCover" alt="Post cover">
+      </figure>
+
+      <div class="prose post-content" id="postContent"></div>
+
+      <footer class="post-footer">
+        <div class="author-card">
+          <span class="author-avatar author-avatar-large" aria-hidden="true">F</span>
+          <div>
+            <p class="author-card-label">Written by</p>
+            <p class="author-card-name">Foram</p>
+            <p class="author-card-bio">Engineering student, writing down how operating systems work one post at a time.</p>
+          </div>
+        </div>
+        <a class="btn btn-quiet" href="/">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M11 18l-6-6 6-6"></path>
+          </svg>
+          Back to journal
+        </a>
+      </footer>
+    </article>
+
+    <div class="loading-state" id="postLoading">
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Opening post</span>
+    </div>
+
+    <div class="empty-state post-empty" id="postNotFound" hidden>
+      <div class="empty-art" aria-hidden="true">
+        <span class="empty-sheet sheet-back"></span>
+        <span class="empty-sheet sheet-front">
+          <i></i><i></i><i></i>
+        </span>
+      </div>
+      <h3>This page has gone missing.</h3>
+      <p>The post may have been deleted, or the link is not quite right.</p>
+      <a class="btn btn-primary" href="/">Back to the journal</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Foram<span>.</span></p>
+      <p>Notes on operating systems, kept locally on this machine.</p>
+      <p class="footer-year">&copy; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/post.js"></script>
+</body>
+</html>
